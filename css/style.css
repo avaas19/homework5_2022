@@ -1,41 +1,43 @@
+/* Apply the animation to the logo */
 #logo {
     animation: logostyle 5s;
     width: 475px;
 }
-
+/* keyframes reference for logo animation */
 @keyframes logostyle {
     from {width: 25px; opacity: 0;}
     to {width: 475px; opacity: 1;}
 }
-
+/* animation for users with reduced motion turned on */
 @keyframes nostyle {
     from {width: 475px; opacity: 1;}
     to {width: 475px; opacity: 1;}  
 }
 @media (prefers-reduced-motion){
-     
+/* Apply the reduced motion animation to the logo */
 #logo {
     width: 475px;
     animation: nostyle;
 }    
 
 }
-
+/* Styles font, background image, background color of flex.html body */
 body {
     font-family: "Poppins", Serif;
     background-image: url(../images/concrete_seamless.png);
     background-color:  #f1f1f1;
 }
-
+/* styles the headers in flex.html */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+/* Configures the navigation links to they don't change color when styled */
 .nav_links :visited {
     color: blue;
 }
+/* Styles the header of the card class */
 div.card > header {
     background-color: #288088;
     border: solid 2px #45ADAD;
@@ -44,7 +46,7 @@ div.card > header {
     border-top-right-radius: 50px;
     
 }
-
+/* Styles the card class */
 .card {
     display: flex;
     flex-direction: column;
@@ -53,7 +55,7 @@ div.card > header {
     border-top-right-radius: 50px;
 
 }
-
+/* Styles the pricing class */
 .pricing {
     display: flex;
     flex-wrap: wrap;
@@ -61,13 +63,14 @@ div.card > header {
     align-items: center; 
 } 
 
-
+/* Styles the gallery class */
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+/* Styles the images in the gallery class */
 .gallery img {
     border: solid 10px #50C7C7;
     margin: 10px;
@@ -76,64 +79,68 @@ div.card > header {
 }
 
 
-
+/* CSS for screens wider than 900px */
 @media only screen and (min-width: 900px) {
 
+/* Syles header for screens wider than 900px */
 header {
     flex-direction: row;
     justify-content: space-between;
     
 }
-
+/* Makes body header sticky for screens wider than 900px */
 body > header {
     position: sticky;
     top: 0;
 }
-
+/* Styles links in the navigation for screens wider than 900px */
 ul.nav_links li{
     display: inline;
 }
+ /* Changes the width of cards for screens wider than 900px */
 .card {
     flex-basis: 275px;
 }
 
 }
-
+/* CSS styling for print screen */
 @media print {
+    /* changes font and overrides background image for print screen */
     body{
        font-family: Arial, Helvetica; 
        background-image: none;
     }
-
+/* changes the border of elements the card class for print screen */
     .card {
         border: 2px solid  #45ADDD;
         flex-basis: 325px;
     }
-
+/* Styles the princing class for print screen */
     .pricing {
         align-items: end;
         flex-wrap: nowrap;
     }
-
+/*  hides the gallery for print screen */
     #gallery, .gallery {display: none;}
-
+/* styling for the header for print screen */
     header {
         justify-content: center;
     }
-
+/* styles the body header for print screen */
     body > header {
         flex-direction: column;
     }
-
+/* gives the nav element room to expand for print screen */
     nav {
         width: 100%;
     }
+ /* styles nav links for print screen */
     .nav_links{
         display: flex;
         justify-content: space-around;
     }
 
-
+/* adds the emoji to the second list item in the card class for print screen */
  div.pricing div.card ul li + li:nth-child(2):after {
     content:'\1F44D'
  }
